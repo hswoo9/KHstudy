@@ -42,3 +42,179 @@ div[class*="i"] {
 .div-class[name~="name3"] {
   background-color: pink;
 }
+
+/* 자손 선택자와 후손 선택자 */
+#test1 > h4 {
+  background-color: orange;
+}
+
+#test1 > ul > h4 {
+  background-color: purple;
+}
+
+#test1 > ul > li {
+  background-color: coral;
+}
+
+#test1 li {
+  background-color: aqua;
+  color: red;
+}
+
+/* 형제 선택자 */
+#test2 {
+  background-color: red;
+}
+
+#test2 + div {
+  background-color: greenyellow;
+}
+
+/* 
+#test2~div {
+  background-color: orangered;
+  color:white
+} */
+
+/* 반응 선택자 */
+#active-test,
+#hover-test {
+  background-color: greenyellow;
+  width: 300px;
+  height: 300px;
+}
+
+#active-test:active {
+  background-color: yellow;
+  color: red;
+}
+
+#hover-test:hover {
+  background-color: hotpink;
+  color: white;
+  cursor: pointer;
+}
+
+#userId:focus,
+#userPwd:focus {
+  border: 4px solid red;
+}
+
+/* 상태 선택자 */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked + label {
+  font-size: 1.5em;
+}
+
+option:enabled {
+  background-color: greenyellow;
+}
+
+option:disabled {
+  background-color: violet;
+  color: white;
+}
+
+button:enabled {
+  background-color: yellowgreen;
+}
+
+button:disabled {
+  color: red;
+}
+
+/* 구조 선택자 */
+/* 형제 관계 태그 중 첫 번째 태그 선택 */
+#test3 p:first-child {
+  background-color: red;
+  color: white;
+}
+
+/* 형제 관계 태그 중 마지막 태그 선택 */
+/* 마지막 자식이 p 태그가 아니여서 스타일이 적용되지 않는다. */
+#test p:last-child {
+  background-color: orange;
+  color: white;
+}
+
+/* 형제 관계 태그 중 앞에서 수열 번째 태그 선택 */
+/* #test3 p:nth-child(2 )  */
+/* #test3 p:nth-child(2n)  */
+/* 수식을 사용하거나 수식 대신 odd(홀수), even(짝수)를 전달할 수 있다. */
+#test3 p:nth-child(even) {
+  background-color: yellowgreen;
+  color: white;
+}
+
+/* 형제 관계 태그 중 뒤에서 수열 번째 태그 선택 */
+#test3 p:nth-last-child(4) {
+  background-color: skyblue;
+  color: white;
+}
+
+/* 형제 관계 태그 중 첫 번째 태그 선택 */
+#test4 p:first-of-type {
+  background-color: red;
+  color: white;
+}
+
+/* 형제 관계 태그 중 마지막 태그 선택 */
+#test4 p:last-of-type {
+  background-color: orange;
+  color: white;
+}
+
+/* 형제 관계 태그 중 앞에서 수열 번째 태그 선택 */
+#test4 p:nth-of-type(2n) {
+  background-color: yellowgreen;
+  color: white;
+}
+
+/* 형제 관계 태그 중 뒤에서 수열 번째 태그 선택 */
+#test4 p:nth-last-of-type(4) {
+  background-color: skyblue;
+  color: white;
+}
+
+/* 문자 선택자 */
+/* 첫 번째 글자를 선택해서 스타일 적용 */
+#test5 p::first-letter {
+  font-size: 2em;
+}
+
+/* 첫 번째 라인을 선택해서 스타일 적용 */
+#test5 p::first-line {
+  background-color: beige;
+}
+
+/* 요소 내용 앞에 위치하는 공간을 선택 */
+#test5 p::before {
+  content: "1. ";
+}
+
+/* 요소 내용 뒤에 위치하는 공간을 선택 */
+#test5 p::after {
+  content: "@@@@@";
+  font-size: 2em;
+}
+
+/* 사용자가 드래그한 글자 선택 */
+#test5 p::selection {
+  background-color: tomato;
+  color: beige;
+}
+
+/* 부정 선택자 */
+/* #tset6 p:not(.p) {
+  background-color: chocolate;
+} */
+/* #tset6 p:not(:last-child) {
+  background-color: chocolate;
+} */
+#test6 p:not(:nth-child(even)) {
+  background-color: chocolate;
+}

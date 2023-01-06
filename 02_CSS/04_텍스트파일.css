@@ -1,0 +1,54 @@
+/* font-family */
+/* body {
+    font-family: '돋움';
+} */
+
+#ff1 {
+  font-family: "궁서체";
+}
+
+#ff2 {
+  font-family: "굴림체";
+}
+
+#ff3 {
+  font-family: "없는 글꼴", "hack", "굴림";
+}
+
+#wf {
+  font-family: "East Sea Dokdo", cursive;
+  font-size: 3em;
+}
+
+/* font-size */
+#size1 {
+  /* font-size: 30px; */
+  font-size: 20pt;
+}
+
+#size2 {
+  font-size: 2em;
+}
+
+#size2 span {
+  font-size: 2rem;
+}
+
+#size3 {
+  font-size: 150%;
+}
+
+/* font-weight */
+#fw1 {
+  font-weight: 700;
+  /* font-weight: bold; */
+}
+
+#fw2 {
+  font-weight: lighter;
+}
+
+#fw3 {
+  font-weight: 900;
+  /* font-weight: bolder; */
+}
