@@ -196,3 +196,105 @@
   height: 100px;
   background-color: blue;
 }
+
+/* visibility */
+.visibility {
+  border: 1px solid;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+#visibility1 {
+  background-color: pink;
+}
+
+#visibility2 {
+  /* display: none; */
+  visibility: hidden;
+  background-color: beige;
+}
+
+#visibility3 {
+  background-color: skyblue;
+}
+
+/* z-index */
+#z-outer {
+  position: relative;
+  height: 250px;
+}
+
+.z-index {
+  width: 150px;
+  height: 100px;
+  border: 1px solid;
+  position: absolute;
+}
+
+#z-index1 {
+  top: 100px;
+  left: 100px;
+  background-color: orange;
+  z-index: 5;
+}
+
+#z-index2 {
+  top: 50px;
+  left: 50px;
+  background-color: blueviolet;
+  z-index: 4;
+}
+
+#z-index3 {
+  background-color: green;
+  z-index: 99999;
+}
+
+/* 다단 스타일 */
+.column-wrap {
+  border: 1px solid;
+  height: 150px;
+  overflow: scroll;
+}
+
+#column1 {
+  column-width: 300px;
+  column-gap: 20px;
+  /* column-rule-color: orange; */
+  /* column-rule-style: dashed; */
+  /* column-rule-width: 5px; */
+  column-rule: 5px dotted orange;
+}
+
+#column2 {
+  column-count: 6;
+}
+
+#column2 > h4 {
+  column-span: all;
+}
+
+/* 표 스타일 */
+table {
+  width: 300px;
+  height: 400px;
+  border: 1px solid;
+  caption-side: bottom;
+  /* border-collapse: collapse; */
+  /* border-spacing: 20px; */
+  border-spacing: 20px 50px;
+  empty-cells: hide;
+  table-layout: fixed;
+  /* word-break: break-all; */
+}
+
+td {
+  width: 80px;
+  height: 100px;
+  border: 1px solid;
+  text-align: center;
+  vertical-align: bottom;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
