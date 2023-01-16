@@ -60,28 +60,100 @@ window.onload = function () {
     // div2.innerHTML += `array2을 기준으로 배열을 결합 : [${array2.concat(array1)}]<br>`;
     // div2.innerHTML += `array2 : [${array2}]<br><br>`; // 원본 배열에 영향을 미치지 않는다.
 
-    //3) sort()
-    let array1 = ["Apple", "Cherry", "apple", "Banana"];
-    let array2 = [10, 543, 30, 450, 123, 4885];
+    // //3) sort()
+    // let array1 = ["Apple", "Cherry", "apple", "Banana"];
+    // let array2 = [10, 543, 30, 450, 123, 4885];
 
-    div2.innerHTML = `array1 : [${array1}]<br>`;
-    div2.innerHTML += `array2 : [${array2}]<br>`;
-    div2.innerHTML += `array1.sort() : [${array1.sort()}]<br>`;
-    div2.innerHTML += `array2.sort() : [${array2.sort()}]<br>`;
-    //원본 배열에 영향을 미치는 메소드 이다
-    div2.innerHTML += `array1 : [${array1}]<br>`;
-    div2.innerHTML += `array2 : [${array2}]<br>`;
+    // div2.innerHTML = `array1 : [${array1}]<br>`;
+    // div2.innerHTML += `array2 : [${array2}]<br>`;
+    // div2.innerHTML += `array1.sort() : [${array1.sort()}]<br>`;
+    // div2.innerHTML += `array2.sort() : [${array2.sort()}]<br>`;
+    // //원본 배열에 영향을 미치는 메소드 이다
+    // div2.innerHTML += `array1 : [${array1}]<br>`;
+    // div2.innerHTML += `array2 : [${array2}]<br>`;
 
-    //array2 오름차순 정렬
-    array2.sort(function (left, right) {
-      return left - right;
-    });
-    div2.innerHTML += `array2 : [${array2}]<br>`;
+    // //array2 오름차순 정렬
+    // array2.sort(function (left, right) {
+    //   return left - right;
+    // });
+    // div2.innerHTML += `array2 : [${array2}]<br>`;
 
-    //array2 내림차순 정렬
-    array2.sort(function (left, right) {
-      return right - left;
-    });
-    div2.innerHTML += `array2 : [${array2}]<br>`;
+    // //array2 내림차순 정렬
+    // array2.sort(function (left, right) {
+    //   return right - left;
+    // });
+    // div2.innerHTML += `array2 : [${array2}]<br>`;
+
+    // 4) reverse()
+    // let array = Array.of(8, 5, 3, 6, 1, 4) ;
+
+    // div2.innerHTML = '<h4>안녕하세요.</h4>';
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.reverse() : [${array.reverse()}]<br>`;
+    // // 원본 배열에 영향을 미치는 메소드이다.
+    // div2.innerHTML += `array : [${array}]<br>`
+    // div2.innerHTML += `array를 내림차순으로 정렬 : [${array.sort().reverse()}]<br>`
+
+    // 5) push(), pop()
+    // let array = ["뉴진스", "없어요..", "카라", "김범석"];
+
+    // // push()
+    // div2.innerHTML = `array : [${array}]<br>`;
+    // div2.innerHTML += `array.push() : [${array.push("버즈")}]<br>`; // push 후 요소의 개수를 리턴한다.
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.push() : [${array.push("헤이즈")}]<br>`; // push 후 요소의 개수를 리턴한다.
+    // div2.innerHTML += `array : [${array}]<br>`;
+
+    // //pop()
+    // div2.innerHTML += `array.pop() : [${array.pop()}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.pop() : [${array.pop()}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+
+    // 6) unshift(), shift()
+    // let array = ["뉴진스", "없어요..", "카라", "김범석"];
+
+    // // unshift()
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.unshift() : [${array.unshift("아이유")}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.unshift() : [${array.unshift("GOD")}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+
+    // // shift()
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.shift() : [${array.shift("아이유")}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.shift() : [${array.shift("GOD")}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+
+    // 7) slice(), splice()
+    // let array = ["뉴진스", "없어요..", "카라", "김범석", '멜로망스'];
+
+    // // slice()
+    // div2.innerHTML = `array : [${array}]<br>`;
+    // div2.innerHTML += `array.slice(2) : [${array.slice(2)}]<br>`;
+    // // 원본 배열에 영향을 미치지 않는 메소드이다.
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array.slice(2, 4) : [${array.slice(2, 4)}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br><br>`;
+
+    // //splice()
+    // // div2.innerHTML += `array,splice(2) : [${array.splice(2)}]<br>`;
+    // div2.innerHTML += `array,splice(2, 2) : [${array.splice(2, 2)}]<br>`;
+    // // //  원본 배열에 영향을 미치는 메소드이다.
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array,splice(2, 2, '헤이즈') : [${array.splice(2, 2, '헤이즈')}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+    // div2.innerHTML += `array,splice(1, 0, 'BTS', '버즈') : [${array.splice(1, 0, 'BTS', '버즈')}]<br>`;
+    // div2.innerHTML += `array : [${array}]<br>`;
+
+    // 8) toString(), join()
+    let array = ["귤", "사과", "수박", "망고", "자몽"];
+
+    div2.innerHTML = `array : [${array}]<br>`;
+    div2.innerHTML += `array.toString() : [${array.toString()}]<br>`;
+    div2.innerHTML += `array.join() : [${array.join()}]<br>`;
+    div2.innerHTML += `array.join('|') : [${array.join("|")}]<br>`;
   });
 };
