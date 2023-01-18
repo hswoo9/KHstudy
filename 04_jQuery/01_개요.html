@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 개요</title>
+    <!-- <script src="./js/jquery-3.6.3.min.js"></script> -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>jQuery 개요</h1>
+
+    <h2>1. 제이쿼리(jQuery)</h2>
+    <p>존 레식에 의해 개발된 오픈 소스 기반의 JavaScript 라이브러리이다.</p>
+
+    <h2>2. 제이쿼리 적용</h2>
+    <h3>1) 제이쿼리 라이브러리 다운로드</h3>
+    <h3>2) CDN(Content Delivery Network)을 통한 다운로드</h3>
+
+    <h2>3. 제이쿼리 시작</h2>
+    <p>
+      제이쿼리는 ready 메소드를 통해 웹 문서의 모든 요소가 로드 된 후에
+      실행되어야 한다.
+    </p>
+
+    <script>
+      // 자바스크립트
+      // window.onload = function() {
+      //     console.log('문서 읽어들이기 완료 1')
+      // }
+
+      // window.onload = function() {
+      //     console.log('문서 읽어들이기 완료 2')
+      // }
+
+      // 제이쿼리
+      // 일반적으로 가장 많이 사용한다.
+      $(document).ready(function () {
+        console.log("문서 읽어들이기 완료 1");
+      });
+
+      // $ 대신에 jQuery를 사용한다.
+      jQuery(document).ready(() => {
+        console.log("문서 읽어들이기 완료2");
+      });
+
+      // 축약형
+      $(() => {
+        console.log("문서 읽어들이기 완료3");
+
+        // p 요소들을 선택해서 글자를 빨간색으로 바꾸기
+        // 1) 자바스크립트
+        // let tags = document.getElementByIdTagName('p');
+
+        // for (const index in tags) {
+        //     tags[index].style.color = 'red'
+        //     }
+        //
+
+        // 2) 제이쿼리
+        $("p").css("color", "orange");
+      });
+    </script>
+  </body>
+</html>
