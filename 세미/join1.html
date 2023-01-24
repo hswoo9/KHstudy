@@ -1,134 +1,311 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>join</title>
-<style>
-      label {
+    <title>회원 가입</title>
+    <script type="text/javascript">
+    
+    function validate() {
+        var objID = document.getElementById("my_id");
+        var objPwd1 = document.getElementById("my_pwd");
+        var objPwd2 = document.getElementById("my_pwd2");
+        var objEmail = document.getElementById("my_mail");
+        var objName = document.getElementById("my_name");
+
+        var arrNum1 = new Array();
+        var arrNum2 = new Array();
+
+        var regul1 = /^[a-zA-Z0-9]{4,12}$/;
+
+        var regul2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+
+        var regul3 = /^[가-힝a-zA-Z]{2,}$/;
+
+        if ((objID.value) == ""){
+            alert("아이디를 입력하지 않았습니다.");
+            objID.focus();
+            return false;
+        }
+        if (!check(regul1,objID,"아이디는 4~12자의 대소문자와 숫자로만 입력 가능합니다.")) {
+            return false;
+        }
+        if ((objPwd1.value) == ""){
+            alert("비밀번호를 입력해 주세요");
+            objPwd1.focus();
+            return false;
+        }
+        if ((objPwd2.value=="")){
+            alert("비밀번호를 입력해 주세요");
+            objPwd2.focus();
+            return false;
+        }
+
+        if (!check(regul1,objPwd1,"비밀번호는 4~12자의 대소문자와 숫자로만 입력 가능합니다.")) {
+            return false;
+        }
+        
+        if ((objPwd1.value)!=(objPwd2.value)) {
+            alert("비밀번호가 일치 하지 않습니다.");
+            objPwd1.value = '';
+            objPwd2.value = '';
+            objPwd1.focus();
+            objPwd2.focus();
+            return false;
+        }
+        if ((objEmail.value)=="") {
+            alert("이메일을 입력해 주세요");
+            objEmail.focus();
+            return false;
+        }
+        if (!check(regul2,objEmail,"이메일을 잘못 입력 했습니다.")) {
+            return false;
+        }
+        if ((objName.value)=="") {
+            alert("이름을 입력해 주세요");
+            objName.focus();
+            return false;
+        }
+        if (!check(regul3,objName,"이름이 잘못 되었습니다.")) {
+            return false;
+        }
+    }
+    function check(re,what,message){
+        if (re.test(what.value)) {
+            return true;
+        }
+        alert(message);
+        what.value = "";
+        what.focus();
+    }
+
+    
+
+    </script>
+
+    <style>
+        label {
         display: block;
-      }
-      .area {
+        }
+        .area {
         border: 1px solid;
-        width: 950px;
+        width: 50%;
         height: 200px;
         margin-bottom: 10px;
         margin-top: 10px;
         overflow: scroll;
-      }
-      .area2 {
+        }
+        .area2 {
         border: 1px solid;
-        width: 950px;
-        height: 100px;
+        width: 100%;
+        height: 10em;
         margin-bottom: 10px;
         margin-top: 10px;
         overflow: scroll;
-      }
-
-      #join {
-        width: 200px;
-        height: 50px;
-        background-color: beige;
-        font-size: 1.3em;
-        border: solid;
-        text-align: center;
-        margin: 0px 650px;
-      }
-
-      #agree {
+        resize: none;
+        }
+        #agree {
         margin: 50px 250px 50px 250px;
-      }
-
-      #infor {
-        margin:  50px 250px 50px 250px;
-      }
-
-      #leg1 {
+        }
+        #leg2 {
         text-align: center;
-      }
-      #leg2 {
-        text-align: center;
-      }
+        }
+
+        #div1 {
+        width: 100%;
+        height: 15em;
+        border: 1px solid;
+        resize: none;
+        }
+
+        #div2 {
+        width: 100%;
+        height: 15em;
+        border: 1px solid;
+        resize: none;
+        }
+    </style>
+
+</div>
     </style>
 </head>
 <body>
-    <form method="POST">
-        <fieldset id="infor">
-            <legend id="leg1">입력 사항</legend>
-            <table id="tab1">
-                <tr>
-                    <th>이름</th>
-                    <td><input type="text" name="name" placeholder="이름을 입력해주세요." size="20"></td>
-                    
-                </tr>
-                <tr>
-                    <th>별명</th>
-                    <td><input type="text" name="nick" id="nick"></td>
-                    <td><input type="submit" value="중복 확인"></td>
-                </tr>
-                <tr>
-                    <th>전화번호
-                        <td><select name="010" id="first">                         <option selected>010</option>
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="017">017</option>
-                            <input type="text" id="middle" size="3.5" style="margin-left: 5px;">
-                            <input type="text" id="last" size="3.5" style="margin-left: 2px;"></select></td>
-                        <td></td>
-                        <td></td>
-                    </th>
-                </tr>
-                <tr>
-                    <th>ID</th>
-                    <td><input
-                        type="text"
-                        name="id"
-                        placeholder="아이디 10글자 이내 "
-                        size="20"
-                        /></td>
-                    <td><input type="submit" value="중복 확인" /></td>
-                </tr>
-                <tr>
-                    <th>비밀번호</th>
-                    <td><input
-                        type="text"
-                        name="pwd"
-                    size="20"
-                    placeholder="영문,숫자,특수문자 포함 8자 이상"
-                    /></td>
-                </tr>
-                <tr>
-                    <th>비밀번호 확인</th>
-                    <td><input type="text" name="pwdch" size="20"/></td> <br>
-                    <td><label class="hint">위의 비밀번호와 일치하게 입력하시오.</label></td>
-                </tr>
-                <tr>
-                    <th>Email</th>
-                    <td><input type="email" name="email" size="20" /></td>
-                    <td><select name="mail" id="mail">
-                        <option selected>직접입력</option>
-                        <option value="네이버">naver.com</option>
-                        <option value="구글">gmail.com</option>
-                        <option value="다음">daum.net</option>
-                    </select></td>
-                </tr>
-            </table>
-        </fieldset>
-        
-        <fieldset id="agree">
-            <form>
-                <legend id="leg2">이용 약관 동의</legend>
+<p>
+    <h1 align="center">회원 가입</h1><br><hr><br><br>
+</p>
+<FORM name="f" method="post" onsubmit="return validate()">
+<table width="50%" height="80" border="1" align="center" cellpadding="5" cellspacing="0">
+    <tr align="center">
+        <td colspan="2" align="cener" bgcolor="beige">
+            <div style="font-weight: bold; font-size: 18px; padding : 10px 0;">회원 기본 정보
+            </div></td>
+    </tr>
+    <tr>
+        <td bgcolor="beige" align="center">
+            <div style="font-weight: bold; padding : 10px 0;">아이디 :
+            </div></td>
+        <td>&nbsp<input type="text" name="my_id" id="my_id" size="12" maxlength="12">
+            &nbsp4~12자의 영문 대소문자와 숫자로만 입력</td>
+    </tr>
+    <tr>
+        <td bgcolor="beige" align="center"><div style="font-weight: bold; padding : 10px 0;">비밀번호 :</div></td>
+        <td>&nbsp<input type="password" id="my_pwd" name="my_pwd" size="12" maxlength="12">
+            &nbsp4~12자의 영문 대소문자와 숫자로만 입력</td>
+    </tr>
+    <tr>
+        <td bgcolor="beige" align="center"><div style="font-weight: bold; padding : 10px 0;">비밀번호 확인 :</div></td>
+        <td>&nbsp<input type="password" id="my_pwd2" name="my_pwd2" size="12" maxlength="12"></td>
+    </tr>
+    <tr>
+        <td bgcolor="beige" align="center"><div style="font-weight: bold; padding : 10px 0;">메일주소 :</div></td>
+        <td>&nbsp<input type="text" name="my_mail" id="my_mail" size="30" maxlength="30"></td>
+    </tr>
+    <tr>
+        <td bgcolor="beige" align="center"><div style="font-weight: bold; padding : 10px 0;">이름 :</div></td>
+        <td>&nbsp<input type="text" name="my_name" id="my_name" size="10" maxlength="10"></td>
+    </tr>
+        <td bgcolor="beige" align="center"><div style="font-weight: bold; padding : 10px 0;">생년월일 :</div></td>
+        <td>&nbsp
+            <select id="year">
+        <option value="년도">년도</option>
+        <option>1950</option>
+        <option>1951</option>
+        <option>1952</option>
+        <option>1953</option>
+        <option>1954</option>
+        <option>1955</option>
+        <option>1956</option>
+        <option>1957</option>
+        <option>1958</option>
+        <option>1959</option>
+        <option>1960</option>
+        <option>1961</option>
+        <option>1962</option>
+        <option>1963</option>
+        <option>1964</option>
+        <option>1965</option>
+        <option>1966</option>
+        <option>1967</option>
+        <option>1968</option>
+        <option>1969</option>
+        <option>1970</option>
+        <option>1971</option>
+        <option>1972</option>
+        <option>1973</option>
+        <option>1974</option>
+        <option>1975</option>
+        <option>1976</option>
+        <option>1977</option>
+        <option>1978</option>
+        <option>1979</option>
+        <option>1980</option>
+        <option>1981</option>
+        <option>1982</option>
+        <option>1983</option>
+        <option>1984</option>
+        <option>1985</option>
+        <option>1986</option>
+        <option>1987</option>
+        <option>1988</option>
+        <option>1989</option>
+        <option>1990</option>
+        <option>1991</option>
+        <option>1992</option>
+        <option>1993</option>
+        <option>1994</option>
+        <option>1995</option>
+        <option>1996</option>
+        <option>1997</option>
+        <option>1998</option>
+        <option>1999</option>
+        <option>2001</option>
+        <option>2002</option>
+        <option>2003</option>
+        <option>2004</option>
+        <option>2005</option>
+        <option>2006</option>
+        <option>2007</option>
+        <option>2008</option>
+        <option>2009</option>
+        <option>2010</option>
+        <option>2011</option>
+        <option>2012</option>
+        <option>2013</option>
+        <option>2014</option>
+        <option>2015</option>
+        <option>2016</option>
+        <option>2017</option>
+        <option>2018</option>
+        <option>2019</option>
+        <option>2020</option>
+        <option>2021</option>
+        <option>2022</option>
+    </select>년&nbsp
+            <select name="month" id="month">
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+                <option value="3" >3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select>
+            월&nbsp<select name="day" id="day">
+            <option value="1" selected="selected">1</option>
+            <option value="2">2</option>
+                <option value="3" >3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+                <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+                <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+            </select>일</td>
+            
+    </tr>
+</table>
+<br><br>
+
+<br><br>
+
+
+<fieldset id="agree">
+                <legend id="leg2" style="font-weight: bold; font-size: 20px">이용 약관 동의</legend>
                 <label for="agree_all">
                     <input
-                      type="checkbox"
-                      name="agree_all"
-                      id="agree_all"
-                      style="margin-bottom: 10px"
+                    type="checkbox"
+                    name="agree_all"
+                    id="agree_all"
+                    style="margin-bottom: 10px"
                     />
                     <span><strong>모두 동의합니다</strong></span>
-                  </label>
-                  <label for="agree">
+                </label>
+                <label for="agree">
                     <input type="checkbox" name="agree" value="1" />
                     <span>이용약관 동의<strong>(필수)</strong></span>
                     <div id="div1" class="area">
@@ -424,8 +601,8 @@
                       부 칙(시행일) 이 약관은 년 월 일부터 시행합니다. 부 칙(시행일) 이 약관은
                       년 월 일부터 시행합니다.
                     </div>
-                  </label>
-                  <label for="agree">
+                </label>
+                <label for="agree">
                     <input type="checkbox" name="agree" value="2" />
                     <span>개인정보 수집, 이용 동의<strong>(필수)</strong></span>
                     <div id="div2" class="area">
@@ -473,22 +650,22 @@
                       -보존기간 : 3개월 ※ 동의를 거부할 수 있으나 거부시 회원 가입이
                       불가능합니다.
                     </div>
-                  </label>
-                  <label for="agree">
+                </label>
+                <label for="agree">
                     <input
-                      type="checkbox"
-                      name="agree"
-                      value="3"
-                      style="margin-bottom: 10px"
+                    type="checkbox"
+                    name="agree"
+                    value="3"
+                    style="margin-bottom: 10px"
                     />
                     <span >개인정보 이용 동의<strong>(필수)</strong></span>
-                  </label>
-                  <label for="agree">
+                </label>
+                <label for="agree">
                     <input type="checkbox" name="agree" value="4" />
                     <span
-                      >이벤트, 혜택정보 수신동의<strong class="select_disable"
+                    >이벤트, 혜택정보 수신동의<strong class="select_disable"
                         >(선택)</strong
-                      ></span
+                    ></span
                     >
                     <div id="div3" class="area2">
                       할인쿠폰 및 혜택, 이벤트, 신상품 소식 등 쇼핑몰에서 제공하는 유익한
@@ -500,11 +677,16 @@
                       선택약관에 동의하지 않으셔도 회원가입은 가능하며, 회원가입 후
                       회원정보수정 페이지에서 언제든지 수신여부를 변경하실 수 있습니다.
                     </div>
-                  </label>
-                  <script src="./join2.js"></script>
+                </label>
+                <script src="./join.js"></script>
+                <p align="center">
+                    <input type="submit" name="submit" value="회원 가입" style="width: 100px; height: 35px;" >
+                    <input type="reset" value="다시 입력" style="width: 100px; height: 35px;">
+                </p>
             </form>
         </fieldset>
 
-        <button id="join">회원 가입</button>
+
+
 </body>
 </html>
