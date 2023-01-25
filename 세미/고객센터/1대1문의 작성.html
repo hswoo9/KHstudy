@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            text-align: left !important;
+        }
+
+        .btn{
+    margin-top: 15px;
+    width: 120px;
+    height: 35px;
+    font-size: 17px;
+}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2>게시글 작성</h2>
+        
+        <form method="post" action="BoardServlet">
+        	<input type="hidden" value="board_write" name="command">
+            <table>
+                <tr>
+                    <th>제목 *</th>
+                    <td><input type="text" name="title" style="width: 300px; height: 25px;"></td>
+                </tr>
+                <tr>
+                    <th>아이디 *</th>
+                    <td><input type="text" name="name" style="width: 300px; height: 25px;"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호 *</th>
+                    <td><input type="password" name="pass" style="width: 300px; height: 25px;"></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td><textarea cols="70" rows="20" name="content" style="resize: none; overflow: scroll;"></textarea></td>
+                </tr>
+            </table>
+            <input class="btn" type="submit" value="등록" style="margin-left: 5%; margin-top: 60px;">
+            <input class="btn" type="reset" value="다시작성하기">
+            <input class="btn" type="button" value="취소" onclick="javascript:history.back()">
+        </form>
+</body>
+</html>
