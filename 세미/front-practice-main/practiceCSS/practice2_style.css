@@ -1,0 +1,36 @@
+body{
+    padding: 60px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-bar{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+#start{
+    text-decoration: none;
+    width: 600px;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 103, 64);
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+}
+.article-img{
+    display: flex;
+    justify-content: center;
+}
+#img-1{
+    width: 800px;
+    height: 300px;
+    border-radius: 10px;
+}
+.article-div{
+    height: 15px;
+}
