@@ -5,7 +5,7 @@
 	<section>
 		<h2>개인 정보 입력</h2>
 		
-		<form action="userFormResult.jsp" method="GET">
+		<form action="userFormResult.jsp" method="POST">
 		<label for="userName">이름 : </label>
 		<input type="text" name="userName" id="userName"> <br>
 		<label for="userAge">나이 : </label>
