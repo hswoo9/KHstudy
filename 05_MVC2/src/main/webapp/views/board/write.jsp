@@ -44,7 +44,7 @@
 <section id="content">
 	<div id='board-write-container'>
 		<h2>게시판 작성</h2>
-		<form action="${ path }/board/write" method="POST"  enctype="">
+		<form action="${ path }/board/write" method="POST"  enctype="multipart/form-data">
 			<table id='tbl-board'>
 				<tr>
 					<th>제목</th>
@@ -52,7 +52,7 @@
 				</tr>
 				<tr>
 					<th>작성자</th>
-					<td><input type="text" name="writer" value="" readonly></td>
+					<td><input type="text" name="writer" value="${ loginMember.id }" readonly></td>
 				</tr>
 				<tr>
 					<th>첨부파일</th>
