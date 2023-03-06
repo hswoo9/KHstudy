@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.kh.mvc.board.model.dao.BoardDao;
 import com.kh.mvc.board.model.vo.Board;
+import com.kh.mvc.board.model.vo.Reply;
 import com.kh.mvc.common.util.PageInfo;
 
 public class BoardService {
@@ -35,12 +36,25 @@ public class BoardService {
       return list;
    }
 
-   public Board getBoardByNo(int no) {
+   public Board getBoardByNo(int no, boolean hasRead) {
       Board board = null;
       Connection connection = getConnection();
       
       board = new BoardDao().findBoardByNo(connection, no);
       
+      // 게시글 조회 수 증가 로직
+      if(board != null && !hasRead ) {
+    	  int result = new BoardDao().updateReadCount(connection, board);
+          
+          if (result > 0) {
+              commit(connection);
+           } else {
+              rollback(connection);
+           }
+      }
+     
+      
+      close(connection);
       
       return board;
    }
@@ -67,5 +81,40 @@ public class BoardService {
       
       return result;
    }
+
+public int delete(int no) {
+	int result = 0;
+	Connection connection = getConnection();
+	
+	result = new BoardDao().updateStatus(connection, no, "N");
+	
+	if(result > 0) {
+		commit(connection);
+	} else {
+		rollback(connection);
+	}
+	
+	close(connection);
+	
+	return result;
+}
+
+public int saveReply(Reply reply) {
+	int result = 0;
+	Connection connection = getConnection();
+	
+	result = new BoardDao().insertReply(connection, reply);
+	
+	if(result > 0) {
+		commit(connection);
+	} else {
+		rollback(connection);
+	}
+	
+	close(connection);
+	
+	return result;
+}
+
 
 }
