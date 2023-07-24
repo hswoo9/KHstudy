@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 스타일</title>
+    <link rel="stylesheet" href="./05_레이아웃스타일.css">
+</head>
+<body>
+    <h1>레이아웃 스타일</h1>
+    <h2>박스 모델</h2>
+    <h3>width, height</h3>
+    <h4>고정크기</h4>
+    <div id="fixed-size" class="size-test"></div>
+
+    <h4>가변크기</h4>
+    <div id="variable-size" class="size-test"></div>
+
+    <h3>display</h3>
+    <h4>블록 레벨 요소를 인라인 레벨 요소로 변경</h4>
+    <div class="display display-inline">1 번째 영역</div>
+    <div class="display display-inline">2 번째 영역</div>
+    <div class="display display-inline">3 번째 영역</div>
+    <div class="display display-inline">4 번째 영역</div>
+    <div class="display display-inline">5 번째 영역</div>
+
+    <h4>인라인 레벨 요소를 블록 레벨 요소로 변경</h4>
+    <span class="display display-block">1 번째 영역</span>
+    <span class="display display-block">2 번째 영역</span>
+    <span class="display display-block">3 번째 영역</span>
+    <span class="display display-block">4 번째 영역</span>
+    <span class="display display-block">5 번째 영역</span>
+
+    <h4>블록 레벨 요소를 인라인 블록 레벨 요소로 변경</h4>
+    <!-- div.display.display-inline-block*5{$ 번째 영역} -->
+    <div class="display display-inline-block">1 번째 영역</div>
+    <div class="display display-inline-block">2 번째 영역</div>
+    <div class="display display-inline-block">3 번째 영역</div>
+    <div class="display display-inline-block">4 번째 영역</div>
+    <div class="display display-inline-block">5 번째 영역</div>
+
+    <h3>padding, margin</h3>
+    <div class="space">기준 div</div>
+
+    <h4>padding</h4>
+    <div class="space" id="padding1">전체 padding</div>
+    <br>
+    <div class="space" id="padding2">부분 padding</div>
+
+    <h4>margin</h4>
+    <div class="space" id="margin1">전체 margin</div>
+    <div class="space" id="margin2">부문 margin</div>
+
+    <h2>테두리 스타일</h2>
+    <div class="border" id="border1"></div>
+    <div class="border" id="border2"></div>
+    <div class="border" id="border3"></div>
+    <div class="border" id="border4"></div>
+    <div class="border" id="border5"></div>
+    <div class="border" id="border6"></div>
+    <div class="border" id="border7"></div>
+    <div class="border" id="border8"></div>
+    <div class="border" id="border9"></div>
+    <div class="border" id="border10"></div>
+
+    <h2>포지셔닝</h2>
+    <h3>float, clear</h3>
+    <div class="float">001</div>
+    <div class="float">002</div>
+    <div class="float">003</div>
+    <div class="float">004</div>
+    <div class="float">005</div>
+
+    <hr style="clear: both;">
+    <!-- <img src="../resources/image/flower1.PNG" alt=""> -->
+
+    <h3>position</h3>
+
+    <div id="outer">
+        <div id="first"></div>
+        <div id="second"></div>
+    </div>
+
+    <!-- <div id="fixed"></div> -->
+
+    <h3>visibility</h3>
+
+    <div class="visibility" id="visibility1"></div>
+    <div class="visibility" id="visibility2"></div>
+    <div class="visibility" id="visibility3"></div>
+
+    <h3>z-index</h3>
+
+    <div id="z-outer">
+        <div class="z-index" id="z-index1"></div>
+        <div class="z-index" id="z-index2"></div>
+        <div class="z-index" id="z-index3"></div>
+    </div>
+
+    <h2>다단 스타일</h2>
+    <h3>단의 너비를 이용하여 단 나누기</h3>
+    <div class="column-wrap" id="column1">
+        <h4>美위성, 한반도 지나간 듯…“재난문자로 안심되냐” 비판도</h4>
+
+        <p>
+            과학기술정보통신부는 미국 지구관측 위성 ‘ERBS’가 한반도 상공을 지나간 것으로 추정되며 현재까지 피해 상황은 접수되지 않았다고 9일 밝혔다.
+
+            미 공군은 ERBS 정확한 추락 지점과 시각을 발표할 예정이다.
+
+            미국 측이 위성 추락 장면을 포착했거나 약 2시간 동안 위성이 관측되지 않을 시 추락 여부가 확정된다.
+
+            과기정통부는 “한국천문연구원이 최종 추락 지점과 시간 등 추가적인 정보를 확인하는 대로 다시 보도할 예정”이라고 덧붙였다.
+
+            ERBS는 1984년 10월 5일 챌린저 우주왕복선에서 발사된 이후 지구 열복사 분포를 관측하고 분석하는 임무를 수행한 무게 2450㎏의 위성이다.
+
+            당초 ERBS 추락 예측 범위에 한반도가 포함됐었다.
+
+            한국천문연구원이 이날 오전 4시 기준 수행한 궤도 분석 결과에 따르면 ERBS는 낮 12시20분에서 오후 1시20분 사이 한반도로 떨어질 가능성이 있었다.
+
+            이에 과기정통부는 오전 7시쯤 경계경보를 발령했다.
+
+            과기정통부는 이어 오전 11시31분쯤 재난안전문자를 통해 “12:20∼13:20분 사이 한반도 인근에 미국 인공위성 일부 잔해물이 추락할 가능성이 있다. 해당 시간 외출 시 유의해 주시기 바란다”고 당부했다.
+
+            다만 정부 대처가 미흡했다는 지적이 온라인상에서 제기됐다.
+            재난안전문자만으로는 구체적으로 어떻게 대비해야 하는지 알기 어렵다는 것이다.
+
+            한 누리꾼은 트위터에 재난안전문자 사진을 올린 뒤 “위성 잔해물을 어떻게 유의하라는 건가”라며 불만을 토로했다.
+
+            온라인상에서는 어느 정도의 피해가 예상되며, 어떤 대응이 필요한 지 알려주지 않아 오히려 불안감만 크게 조장했다는 지적도 나왔다.
+            다른 누리꾼은 “위성 추락 잔해를 목격했을 경우에 대한 행동 요령 정도는 말해줘야 되지 않았나 싶다”며 과거 사례를 소환했다.
+
+            이 누리꾼은 2018년 중국 우주정거장 ‘톈궁 1호’ 추락 당시 정부가 배포한 안내자료를 첨부했다. 자료에는 실내와 실외에 있을 경우, 위성 추락 후 대처 방법이 비교적 구체적으로 적혀 있다.
+
+            또 다른 누리꾼은 “재난문자 달랑 보내는 걸로는 안심이 안 되지 않겠느냐”고 꼬집었다.
+        </p>
+    </div>
+
+    <h3>단의 개수를 이용하여 단 나누기</h3>
+    <div class="column-wrap" id="column2">
+        <h4>美위성, 한반도 지나간 듯…“재난문자로 안심되냐” 비판도</h4>
+
+        <p>
+            과학기술정보통신부는 미국 지구관측 위성 ‘ERBS’가 한반도 상공을 지나간 것으로 추정되며 현재까지 피해 상황은 접수되지 않았다고 9일 밝혔다.
+
+            미 공군은 ERBS 정확한 추락 지점과 시각을 발표할 예정이다.
+
+            미국 측이 위성 추락 장면을 포착했거나 약 2시간 동안 위성이 관측되지 않을 시 추락 여부가 확정된다.
+
+            과기정통부는 “한국천문연구원이 최종 추락 지점과 시간 등 추가적인 정보를 확인하는 대로 다시 보도할 예정”이라고 덧붙였다.
+
+            ERBS는 1984년 10월 5일 챌린저 우주왕복선에서 발사된 이후 지구 열복사 분포를 관측하고 분석하는 임무를 수행한 무게 2450㎏의 위성이다.
+
+            당초 ERBS 추락 예측 범위에 한반도가 포함됐었다.
+
+            한국천문연구원이 이날 오전 4시 기준 수행한 궤도 분석 결과에 따르면 ERBS는 낮 12시20분에서 오후 1시20분 사이 한반도로 떨어질 가능성이 있었다.
+
+            이에 과기정통부는 오전 7시쯤 경계경보를 발령했다.
+
+            과기정통부는 이어 오전 11시31분쯤 재난안전문자를 통해 “12:20∼13:20분 사이 한반도 인근에 미국 인공위성 일부 잔해물이 추락할 가능성이 있다. 해당 시간 외출 시 유의해 주시기 바란다”고 당부했다.
+
+            다만 정부 대처가 미흡했다는 지적이 온라인상에서 제기됐다.
+            재난안전문자만으로는 구체적으로 어떻게 대비해야 하는지 알기 어렵다는 것이다.
+
+            한 누리꾼은 트위터에 재난안전문자 사진을 올린 뒤 “위성 잔해물을 어떻게 유의하라는 건가”라며 불만을 토로했다.
+
+            온라인상에서는 어느 정도의 피해가 예상되며, 어떤 대응이 필요한 지 알려주지 않아 오히려 불안감만 크게 조장했다는 지적도 나왔다.
+            다른 누리꾼은 “위성 추락 잔해를 목격했을 경우에 대한 행동 요령 정도는 말해줘야 되지 않았나 싶다”며 과거 사례를 소환했다.
+
+            이 누리꾼은 2018년 중국 우주정거장 ‘톈궁 1호’ 추락 당시 정부가 배포한 안내자료를 첨부했다. 자료에는 실내와 실외에 있을 경우, 위성 추락 후 대처 방법이 비교적 구체적으로 적혀 있다.
+
+            또 다른 누리꾼은 “재난문자 달랑 보내는 걸로는 안심이 안 되지 않겠느냐”고 꼬집었다.
+        </p>
+    </div>
+
+    <h2>표 스타일</h2>
+    <!-- table>caption+(tr>td*2)*4 -->
+    <table>
+        <caption>성적표</caption>
+        <tr>
+            <td>구분</td>
+            <td>점수</td>
+        </tr>
+        <tr>
+            <td>수학</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>국어</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>asdfasdfasdfasdfasdfadsfasdfsd</td>
+        </tr>
+    </table>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</body>
+</html>

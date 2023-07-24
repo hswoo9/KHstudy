@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역 관련 태그</title>
+    <style>
+        div, span {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <h1>영역 관련 태그</h1>
+    <!--  
+        div 태그
+            블록 레벨 요소의 태그로 레이아웃 분할을 위해 사용한다.
+            콘텐츠가 없으면 높이 0, 너비는 100% 이다.
+
+        span 태그
+            인라인 레벨 요소의 태그로 콘텐츠를 감싸는 역할을 한다.
+            콘텐츠가 없으면 높이 0, 너비도 0 이다.
+    -->
+    <h2>div 태그와 span 태그의 차이 1</h2>
+
+    <h3>div 태그</h3>
+    <p>
+        div 태그의 영역은 이미 존재하는 태그 다음 줄에 영역이 설정된다.
+    </p>
+    <!-- div*3{$ 번째 영역} -->
+    <div>1 번째 영역</div>
+    <div>2 번째 영역</div>
+    <div>3 번째 영역</div>
+
+    <h3>span 태그</h3>
+    <p>
+        span 태그의 영역은 줄바꿈이 일어나지 않고 옆으로 영역이 설정된다.
+    </p>
+    <!-- span*3{$ 번째 영역} -->
+    <span>1 번째 영역</span>
+    <span>2 번째 영역</span>
+    <span>3 번째 영역</span>
+
+    <h2>div 태그와 span 태그의 차이 2</h2>
+    <h3>div 태그</h3>
+
+    <div>
+        동해물과 백두산이 마르고 닳도록<br>
+        하느님이 보우하사 우리나라 만세. <br>
+        무궁화 삼천리 화려강산 <br>
+        대한 사람, 대한으로 길이 보전하세.
+    </div>
+
+    <h3>span 태그</h3>
+
+    <span>
+        동해물과 백두산이 마르고 닳도록<br>
+        하느님이 보우하사 우리나라 만세. <br>
+        무궁화 삼천리 화려강산 <br>
+        대한 사람, 대한으로 길이 보전하세.
+    </span>
+
+    <h2>iframe 태그</h2>
+    <p>
+        웹 문서 안에 다른 웹 페이지를 추가하는 태그이다.
+    </p>
+
+    <!--  
+        상대 경로
+            현재 파일을 기준으로 상대적인 경로를 지정하는 방법이다.
+                현재 파일과 동일한 경로일 때
+                ex) 파일명
+                    ./파일명
+
+                현재 파일의 상위 경로일 때
+                ex) ../파일명
+
+        절대 경로
+            실제 파일의 물리적인 경로를 지정하는 방법이다.
+            ex) D:\develop\frontend\01_HTML\04_표관련태그.html
+    -->
+    <!-- <iframe width="600px" height="800px" src="04_표관련태그.html"></iframe> -->
+    <!-- <iframe width="600px" height="800px" src="./04_표관련태그.html"></iframe> -->
+    <!-- <iframe width="600px" height="800px" src="D:\develop\frontend\01_HTML\04_표관련태그.html"></iframe> -->
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/Lkxm6I-w5dw" title="‘패떴 멤버’ 유재석×김종국, 야외 촬영 전문가들과 함께하는 불 피우기!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>

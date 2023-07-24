@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+/* font-family */
+/* body {
+    font-family: '돋움','hack';
+} */
+
+#ff1 {
+    font-family: "궁서체";
+}
+
+#ff2 {
+    font-family: "굴림체";
+}
+
+#ff3 {
+    font-family: "없는글꼴", "hack1", "굴림";
+}
+
+#wf {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 3em;
+}
+
+/* font-size */
+#size1 {
+    /* font-size: 30px; */
+    font-size: 20pt;
+}
+
+#size2 {
+    font-size: 2em;
+}
+
+#size2 span {
+    /* font-size: 1em; */
+    font-size: 1rem;
+}
+
+#size3 {
+    font-size: 150%;
+    /* font-size: 1.5em; */
+}
+
+/* font-weight */
+#fw1 {
+    font-weight: 700;
+    /* font-weight: bold; */
+}
+
+#fw2 {
+    font-weight: lighter;
+}
+
+#fw3 {
+    font-weight: 900;
+    /* font-weight: bolder; */
+}
+
+/* font-style */
+#fs1 {
+    font-style: italic;
+}
+
+#fs2 {
+    font-style: oblique;
+}
+
+/* font-variant */
+#fv {
+    font-size: 2em;
+    font-variant: small-caps;
+}
+
+/* color */
+#c-name {
+    color: orangered;
+}
+
+#c-16 {
+    /* color: #0000ff; */
+    /* color: #00f */
+    /* color: #44ffff; */
+    color: #4ff;
+}
+
+#c-rgb {
+    /* color: rgb(255, 255, 255); */
+    /* color: rgb(0, 0, 0); */
+    /* color: rgb(255, 0, 255); */
+    color: rgba(255, 0, 255, .5);
+}
+
+#c-hsl {
+    /* color: hsl(360, 100%, 50%); */
+    color: hsla(360, 100%, 50%, .3);
+}
+
+/* text-decoration */
+#td1 {
+    text-decoration: underline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: overline;
+}
+
+#td4 {
+    text-decoration: none;
+    color: red;
+}
+
+#td4:visited {
+    color: green;
+}
+
+/* text-transform */
+#tt1 {
+    text-transform: none;
+}
+
+#tt2 {
+    text-transform: capitalize;
+}
+
+#tt3 {
+    text-transform: uppercase;
+}
+
+#tt4 {
+    text-transform: lowercase;
+}
+
+/* text-shadow */
+#bg {
+    background-color: black;
+    width: 400px;
+    padding: 80px;
+}
+
+#ts {
+    color: white;
+    font-size: 10em;
+    /* text-shadow: 10px 10px 15px #a0f3a0; */
+    text-shadow: 0px 0px 4px #ccc,
+                    0px -5px 4px #ff3,
+                    2px -10px 6px #fd3,
+                    -2px -15px 11px #f80,
+                    2px -19px 18px #f20;
+}
+
+/* white-space */
+#whs {
+    border: 1px solid;
+    width: 200px;
+    /* white-space: normal; */
+    /* white-space: nowrap; */
+    /* white-space: pre; */
+    /* white-space: pre-line; */
+    white-space: pre-wrap;
+}
+
+/* letter spacing */
+#ls {
+    letter-spacing: 10px;
+    /* letter-spacing: 1em; */
+}
+
+#ws {
+    /* word-spacing: 20px; */
+    word-spacing: 2em;
+}
+
+/* text-align */
+#ta1 {
+    text-align: left;
+}
+
+#ta2 {
+    text-align: right;
+}
+
+#ta3 {
+    text-align: center;
+}
+
+#ta4 {
+    text-align: justify;
+}
+
+/* text-indent */
+#ti {
+    text-indent: 10px;
+}
+
+/* line-height */
+#lh {
+    /* line-height: 40px; */
+    line-height: 2em;
+}
+
+/* text-overflow */
+#to {
+    background-color: beige;
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
