@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.kh.practice.professor.model.mapper.ProfessorMapper">
+
+	<resultMap id="professorResultMap" type="Professor">
+		<id property="no" column="PROFESSOR_NO"/>
+		<result property="name" column="PROFESSOR_NAME" />
+		<result property="ssn" column="PROFESSOR_SSN" />
+		<result property="address" column="PROFESSOR_ADDRESS" />
+		<association property="department" javaType="Department" columnPrefix="D_" 
+			resultMap="com.kh.practice.department.model.mapper.DepartmentMapper.departmentResultMap"/>
+	</resultMap>
+	
+	<select id="selectProfessorByNo" parameterType="string" resultMap="professorResultMap">
+		SELECT TR.PROFESSOR_NO,
+		       TR.PROFESSOR_NAME,
+		       TR.PROFESSOR_SSN,
+		       TR.PROFESSOR_ADDRESS,
+		       TR.DEPARTMENT_NO,
+		       TD.DEPARTMENT_NO AS "D_DEPARTMENT_NO",
+		       TD.DEPARTMENT_NAME AS "D_DEPARTMENT_NAME",
+		       TD.CATEGORY AS "D_CATEGORY",
+		       TD.OPEN_YN AS "D_OPEN_YN",
+		       TD.CAPACITY AS "D_CAPACITY"
+		FROM TB_PROFESSOR TR
+		LEFT OUTER JOIN TB_DEPARTMENT TD ON (TR.DEPARTMENT_NO = TD.DEPARTMENT_NO)
+		WHERE PROFESSOR_NO = #{no}
+	</select>
+	
+	<select id="selectAllByDeptNo" parameterType="string" resultMap="professorResultMap">
+		SELECT TR.PROFESSOR_NO,
+		       TR.PROFESSOR_NAME,
+		       TR.PROFESSOR_SSN,
+		       TR.PROFESSOR_ADDRESS,
+		       TR.DEPARTMENT_NO,
+		       TD.DEPARTMENT_NO AS "D_DEPARTMENT_NO",
+		       TD.DEPARTMENT_NAME AS "D_DEPARTMENT_NAME",
+		       TD.CATEGORY AS "D_CATEGORY",
+		       TD.OPEN_YN AS "D_OPEN_YN",
+		       TD.CAPACITY AS "D_CAPACITY"
+		FROM TB_PROFESSOR TR
+		LEFT OUTER JOIN TB_DEPARTMENT TD ON (TR.DEPARTMENT_NO = TD.DEPARTMENT_NO)
+		WHERE TR.DEPARTMENT_NO = #{deptNo}
+		ORDER BY TR.PROFESSOR_NAME ASC
+	</select>
+
+</mapper>

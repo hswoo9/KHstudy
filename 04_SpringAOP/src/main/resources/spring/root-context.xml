@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--  
+		AspectJ 어노테이션 기반 애스펙트 적용을 위한 프록시 설정
+	-->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+		
+	<bean id="character" class="com.kh.aop.character.Character" p:name="홍길동" p:level="99" p:weapon-ref="sword"/>
+	
+	<bean id="sword" class="com.kh.aop.weapon.Sword" p:name="크리스탈 소드"/>
+	
+	<bean id="bow" class="com.kh.aop.weapon.Bow" p:name="윈드포스"/>
+	
+	<!--  
+		Aspect로 지정할 객체는 반드시 빈으로 선언되어야 한다.
+		
+		* 포인트 커트 표현식
+		  - 스프링 AOP에서 포인트 커트는 AspectJ의 포인트 커트 표현식을 이용해서 정의한다.
+		  - 스프링 AOP에서 지원되는 AspectJ의 포인트 커트 지정자
+		    execution([접근제한자] 리턴타입 클래스이름.메소드명(파라미터))
+		      메소드 실행에 대한 포인트 커드 지정자이다.
+		        "*"  : 모든 값을 표현한다.
+		        ".." : 0개 이상을 의미한다.
+		    args()
+		      대상 메소드에 전달되는 파라미터 값을 어드바이스에 전달하기 위한 지정자이다.
+		    bean(빈ID)
+		      어드바이스를 적용할 빈의 ID를 지정할 수 있다.
+	        @annotation
+	          주어진 어노테이션을 갖는 조인 포인트를 지정하는 포인트 커트 지정자이다.
+	-->
+	<bean id="characterAspect" class="com.kh.aop.aspect.CharacterAspect"/>
+	
+	<!--  
+	<aop:config>
+		<aop:aspect ref="characterAspect">
+			<aop:pointcut 
+				id="questPointcut"
+				expression="execution(* com.kh.aop.character.Character.quest(..)) and args(questName)" />
+				
+			<aop:before
+				pointcut-ref="questPointcut"
+				method="beforeQuest"/>
+				
+			<aop:after
+				pointcut="execution(* com.kh.aop.character.Character.quest(..))" 
+				method="afterQuest"/>
+			
+			<aop:after-returning 
+				pointcut-ref="questPointcut"
+				returning="result"
+				method="questSuccess"/>
+				
+			<aop:after-throwing
+				pointcut-ref="questPointcut"
+				throwing="exception"
+				method="questFail"/>
+			
+			<aop:around
+				pointcut="execution(* com.kh.aop.character.Character.quest(..))" 
+				method="aroundQuest"/>
+		</aop:aspect>
+	</aop:config>
+	-->
+</beans>
