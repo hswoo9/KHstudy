@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트</title>
+  </head>
+  <body>
+    <h1>이벤트</h1>
+    <h2>1. 이벤트</h2>
+    <h3>1) 인라인 방식</h3>
+
+    <!-- <button onclick="alert('안녕하세요.')">실행 확인</button> -->
+    <button onclick="test1();">실행 확인</button>
+
+    <h3>2) 프로퍼티 방식</h3>
+
+    <button id="btn1">실행 확인</button>
+
+    <h3>3) 메소드 방식</h3>
+
+    <button id="btn2">실행 확인</button>
+
+    <h2>2. 태그(요소)별 기본 이벤트 제거</h2>
+    <!--
+        기본 이벤트가 있는 요소에 onclick 속성을 설정하면 이 코드가 우선적으로 실행되고 그 다음에 기본 이벤트가 실행된다.
+    -->
+    <a href="https://www.naver.com" onclick="alert('네이버로 바로가기 클릭!')"
+      >네이버로 바로가기</a
+    >
+    <!--
+        태그에 기본적으로 설정되어 있는 이벤트를 제거하기 위해서는 이벤트 핸들러의 return 값을 false로 하면된다.
+    -->
+    <a
+      href="https://www.naver.com"
+      onclick="return false;('네이버로 바로가기 클릭!')"
+      >네이버로 바로가기</a
+    >
+
+    <h3>1) 기본 이벤트 제거 1</h3>
+    <form>
+      <label for="pass1">비밀번호 입력 : </label>
+      <input type="password" name="pass1" id="pass1" />
+
+      <br /><br />
+
+      <label for="pass2">비밀번호 확인 : </label>
+      <input type="password" name="pass2" id="pass2" />
+
+      <br /><br />
+
+      <!-- <input type="submit" value="회원가입" onclick="return passwordCheck();" /> -->
+      <input type="submit" id="submit" value="회원가입" />
+    </form>
+
+    <h3>2) 기본 이벤트 제거2</h3>
+    <form>
+      <label for="userId">아이디 : </label>
+      <input type="text" name="userId" id="userId" />
+
+      <p>영문자, 숫자로만 총 5 ~ 12자 사이로 입력해주세요.</p>
+
+      <input type="submit" id="submit2" value="회원가입" />
+    </form>
+    <script src="./08_이벤트.js"></script>
+  </body>
+</html>

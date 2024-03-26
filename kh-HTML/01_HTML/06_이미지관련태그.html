@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 관련 태그</title>
+  </head>
+  <body>
+    <h1>이미지 관련 태그</h1>
+    <h2>img 태그</h2>
+    <h3>src 속성</h3>
+    <!-- <img src="C:\Users\kabi\Desktop\ryoma\resources\image\flower1.PNG" alt="" /> -->
+    <!-- <img src="../resources/image/flower1.PNG" alt=""> -->
+    <img
+      src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjAzMTVfMjYz%2FMDAxNjQ3Mjc3NzExMDEx.ptWAM0Ye5dqi3qgxm025jN_TrdY5ixkRKncoogsWTFAg.XDVpWnUsl4ogLkEhglDYLGAB2b6U2m95G2B5UIfXXzUg.JPEG.tenma1004%2F9f8db78c8fc242c29499e825c0d2a4fd.jpg&type=sc960_832"
+    />
+
+    <h3>alt 속성</h3>
+    <img
+      src="../resources/image/flower11.PNG"
+      alt="이 사진은 벚꽃 사진입니다."
+    />
+
+    <h3>width와 height 속성</h3>
+    <h4>고정 크기 단위 : 화면 사이즈가 줄어도 크기가 변하지 않는다.</h4>
+    <img src="../resources/image/flower1.PNG" width="200px" />
+    <img src="../resources/image/flower2.PNG" width="200px" height="150px" />
+
+    <h4>가변 크기 단위 : 화면 사이즈에 따라 크리가 변경된다.</h4>
+    <img src="../resources/image/flower1.PNG" width="15%" />
+    <img src="../resources/image/flower2.PNG" width="15%" height="150px" />
+
+    <h2>이미지 맵</h2>
+    <h4>이미지 구역을 2개로 나누어 각각 링크 설정</h4>
+    <img
+      src="../resources/image/flower3.PNG"
+      width="600px"
+      height="400px"
+      usemap="#map"
+    />
+
+    <!-- 
+        shape : 링크로 사용할 영역의 형태 지정(rect, circle, ploy)
+        coords : 분할할 영역의 좌표를 지정
+        href : 해당 속성에 기술된 URL로 링크를 만들어준다.
+        target : 링크 페이지가 열릴 위치 (새 창(_blank), 현재 창(_self))
+    -->
+
+    <map name="map">
+      <area
+        shape="rect"
+        coords="0, 0, 300, 400"
+        href="https://www.naver.com"
+        target="_self"
+      />
+      <area
+        shape="rect"
+        coords="300, 0, 600, 400"
+        href="https://www.google.com"
+        target="_blank"
+      />
+    </map>
+
+    <map name="circle_map">
+      <area
+        shape="circle"
+        coords="300, 200, 100"
+        href="https://www.naver.com"
+        target="_blank"
+      />
+    </map>
+  </body>
+</html>

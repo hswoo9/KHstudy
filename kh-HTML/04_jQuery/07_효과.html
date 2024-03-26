@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>효과</title>
+    <style>
+      .menu {
+        border: 1px solid;
+        width: 300px;
+        height: 30px;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .contents {
+        width: 300px;
+        border: 1px solid;
+        height: 200px;
+        display: none;
+      }
+    </style>
+    <script src="./js/jquery-3.6.3.js"></script>
+  </head>
+  <body>
+    <h1>효과</h1>
+
+    <h2>1. show() / hide() / toggle()</h2>
+
+    <button id="show">show</button>
+    <button id="hide">hide</button>
+    <button id="toggle">toggle</button>
+
+    <br /><br /><br />
+
+    <img id="imgCity" src="../resources/image/city1.PNG" />
+
+    <script>
+      $(document).ready(() => {
+        $("#show").on("click", () => {
+          // $('#imgCity').show();
+          //   $("#imgCity").show(1500);
+          $("#imgCity").show(1500, "linear");
+        });
+
+        $("#hide").on("click", () => {
+          // $('#imgCity').hide();
+          // $('#imgCity').hide(1000, 'linear');
+          $("#imgCity").hide(1500, "swing");
+        });
+
+        $("#toggle").on("click", () => {
+          // $('#imgCity').toggle();
+          //   $("#imgCity").toggle(1500);
+          $("#imgCity").toggle(1500, "linear");
+        });
+      });
+    </script>
+
+    <h2>2. slideDown(), slideUp(), slideToggle()</h2>
+
+    <div class="menu">1 번째 메뉴</div>
+    <p class="contents"></p>
+    <div class="menu">2 번째 메뉴</div>
+    <p class="contents"></p>
+    <div class="menu">3 번째 메뉴</div>
+    <p class="contents"></p>
+    <div class="menu">4 번째 메뉴</div>
+    <p class="contents"></p>
+    <div class="menu">5 번째 메뉴</div>
+    <p class="contents"></p>
+
+    <script>
+      $(document).ready(() => {
+        $(".menu").on("click", (event) => {
+          let content = $(event.target).next();
+
+          console.log(content);
+
+          //   if (content.css("display") === "none") {
+          //     content.slideDown(1000);
+          //   } else {
+          //     content.slideUp(1000, "swing");
+          //   }
+
+          content.slideToggle(1000, "swing");
+        });
+      });
+    </script>
+
+    <h2>3. fadeIn(), fadeOut(), fadeToggle(), fadeTo()</h2>
+
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <button id="fadeToggle">fadeToggle</button>
+
+    <br /><br />
+
+    <img id="imgForest" src="../resources/image/forest1.PNG" />
+
+    <script>
+      $(document).ready(() => {
+        $("#fadeOut").click(() => {
+          // $('#imgForest').fadeOut();
+          $("#imgForest").fadeOut(1000, "linear");
+        });
+
+        $("#fadeIn").click(() => {
+          // $('#imgForest').fadeIn();
+          $("#imgForest").fadeIn(1000, "swing");
+        });
+
+        $("#fadeToggle").click(() => {
+          // $('#imgForest').fadeToggle();
+          $("#imgForest").fadeToggle(1000, "linear");
+        });
+
+        $("#imgForest").hover(
+          (event) => {
+            $(event.target).fadeTo(500, 0.2, "linear");
+          },
+          (event) => {
+            $(event.target).fadeTo(500, 1, "swing");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

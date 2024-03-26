@@ -1,0 +1,56 @@
+nav {
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+  width: 1000px;
+  height: 40px;
+}
+
+#navi {
+  /* border: 1px solid red; */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+#navi > li {
+  float: left;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+}
+
+#navi a {
+  text-decoration: none;
+  color: orange;
+  font-size: 1.5em;
+  font-weight: 900;
+  height: 100%;
+  display: block;
+  line-height: 35px;
+}
+
+#navi a:hover {
+  color: orangered;
+}
+
+#navi > li > ul {
+  list-style-type: none;
+  padding: 0;
+  display: none;
+}
+
+/* 탭에 마우스를 가져다대면 하위 메뉴 */
+#navi > li > a:hover + ul {
+  display: block;
+}
+
+/* 탭에 마우스를 가져다대면 하위 메뉴 고정 */
+#navi > li > ul:hover {
+  display: block;
+}
+
+#navi > li > ul a {
+  font-size: 1.2em;
+  /* color: black */
+}

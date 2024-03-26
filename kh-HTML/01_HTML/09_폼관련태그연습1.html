@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>폼 관련 태그 연습1</title>
+  </head>
+  <body>
+    <h2>주문 하기</h2>
+    <form>
+      <label for="userName">고객명 : </label>
+      <input type="text" id="userName" name="userName" />
+
+      <br /><br />
+
+      <label for="pnum">전화번호 : </label>
+      <input type="tel" id="pnum" name="pnum" />
+
+      <br /><br />
+
+      <label for="email">E-mail : </label>
+      <input type="email" id="email" name="email" />
+
+      <br /><br />
+
+      <fieldset>
+        <legend>피자 사이즈</legend>
+        <label>
+          <input type="radio" name="size" value="S" />Small
+          <br />
+          <input type="radio" name="size" value="M" />Medium
+          <br />
+          <input type="radio" name="size" value="L" />Large
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>토핑 선택</legend>
+        <!-- (input:checkbox[name="topping"]+lable*4) -->
+        <label>
+          <input type="checkbox" name="tp" id="bacon" />베이컨
+          <br />
+          <input type="checkbox" name="tp" id="cheese" />치즈
+          <br />
+          <input type="checkbox" name="tp" id="onion" />양파
+          <br />
+          <input type="checkbox" name="tp" id="mushroom" />버섯
+        </label>
+      </fieldset>
+
+      <br /><br />
+
+      <label for="time">희망 배송 시간 : </label>
+      <input type="time" naem="time" id="time" />
+
+      <br /><br />
+      <label>배송 시 요청사항 : </label>
+      <textarea cols="15" rows="4"></textarea>
+
+      <br /><br />
+      <input type="submit" value="주문하기" />
+    </form>
+  </body>
+</html>

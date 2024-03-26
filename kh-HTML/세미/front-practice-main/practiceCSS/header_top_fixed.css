@@ -1,0 +1,53 @@
+body{
+    padding: 60px;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-bar{
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+.article-div{
+    height: 15px;
+}
+.h2-bucket{
+    text-align: center;
+}
+.bucket-table{
+    background-color: rgb(251, 250, 245);
+}
+.bucket-table *{
+    border: 1px solid rgb(220, 230, 247);
+    width: 5%;
+    height: 5%;
+}
+.img-pear{
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+.input-type_checkbox{
+    width: 20px;
+    height: 20px;
+}
+.btn-div{
+    display: flex;
+    justify-content: center;
+    
+}
+.btn-bucket{
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(255, 103, 62);
+    color: white;
+    cursor: pointer;
+}
+.btn-order{
+    color: white;
+    text-decoration:rgb(255, 103, 62);
+}
+
