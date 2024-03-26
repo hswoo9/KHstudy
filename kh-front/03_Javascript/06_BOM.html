@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM(Browser Object Model)</title>
+    <style>
+        .area {
+            border: 1px solid;
+            height: 400px;
+            width: 600px;
+            margin-bottom: 5px;
+            overflow: scroll;
+            font-size: 2em;
+        }
+
+        #second {
+            font-size: 3.5em;
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h1>BOM(Browser Object Model)</h1>
+
+    <h2>1. window 객체</h2>
+    <p>브라우저 창에 대한 설정을 하는 가장 최상위 객체이다.</p>
+
+    <h3>1) window.open()</h3>
+
+    <button id="btn1">실행 확인</button>
+
+    <h3>2) 타이머(Timer)</h3>
+    <h4>window.setTimeout()</h4>
+    <p>일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 단 한 번만 실행한다.</p>
+
+    <button id="btn2">실행 확인</button>
+
+    <h4>window.setInterval()</h4>
+    <p>일정 시간이 경과된 이후에 매개값으로 전달된 콜백 함수를 반복해서 실행한다.</p>
+
+    <div id="div1" class="area"></div>
+
+    <button id="btnStart">실행</button>
+    <button id="btnStop">종료</button>
+
+    <h2>2. location 객체</h2>
+    <p>브라우저의 주소 표시줄(URL)과 관련된 객체로 주소와 관련된 정보를 가진 객체이다.</p>
+
+    <h3>1) location.reload()</h3>
+    <p>페이지를 새로 고침하는 메소드이다.</p>
+
+    <button onclick="location.reload();">새로고침</button>
+    <button onclick="location.href = location.href;">새로고침</button>
+    <button onclick="location = location;">새로고침</button>
+
+    <h3>2) location.href</h3>
+    <p>
+        현재 페이지의 URL 주소를 가지고 있는 속성이다. <br>
+        해당 속성의 값을 변경해서 페이지를 이동할 수 있다.
+    </p>
+
+    <button onclick="location.href = 'https://www.naver.com'">네이버로 이동</button>
+    <button onclick="location = 'https://www.naver.com'">네이버로 이동</button>
+
+    <h3>3) location.assign(), location.replace()</h3>
+    <p>
+        두 메소드 모두 페이지를 이동시키지만 replace(), assign()과 다르게 history에 기록되지 않는다.
+    </p>
+
+    <button onclick="location.assign('https://www.google.com')">구글로 이동</button>
+    <button onclick="location.replace('https://www.google.com')">구글로 이동</button>
+
+    <h2>3. history 객체</h2>
+    <p>브라우저에서 이동한 문서의 내역을 관리하는 객체이다.</p>
+
+    <button onclick="history.back()">뒤로가기</button>
+    <button onclick="history.forward()">앞으로가기</button>
+    <!-- 위 메소드의 기능을 go() 메소드로 구현 -->
+    <button onclick="history.go(-1)">뒤로가기</button>
+    <button onclick="history.go(1)">앞으로가기</button>
+
+    <h2>4. navigator 객체</h2>
+    <p>브라우저에 대한 정보를 가지는 객체이다.</p>
+    
+    <h2>5. screen 객체</h2>
+    <p>사용자의 디스플레이에 대한 정보를 가진 객체이다.</p>
+
+    <script src="./06_BOM.js"></script>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</body>
+</html>

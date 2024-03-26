@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 개요</title>
+    <style>
+        .area {
+            border: 1px solid;
+            width: 300px;
+            height: 100px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>자바스크립트 개요</h1>
+    <h2>1. 자바스크립트 사용법</h2>
+    <h3>1) 내부 자바스크립트 방식</h3>
+
+    <button id="btn1">알림창 출력</button>
+    <script>
+        // 한 줄 주석
+        /*
+            여러 줄 주석
+            여러 줄 주석
+        */
+        // 아이디가 'btn1'인 요소를 btn1 변수에 대입
+        var btn1 = document.getElementById('btn1');
+
+        console.log(btn1);
+
+        btn1.onclick = function () {
+            alert('버튼 클릭!!!');
+        }
+    </script>
+
+    <h3>2) 외부 자바스크립트 방식</h3>
+
+    <button id="btn2">console 출력</button>
+    
+    <h3>3) 인라인 스크립트 방식</h3>
+    <button onclick="alert('알림창 출력!!!!!');">알림창 출력</button>
+    <button onclick="consoleTest();">console 출력</button>
+
+    <h2>2. 데이터 입출력</h2>
+    <h3>1) 데이터 입력</h3>
+    <h4>window.confirm()</h4>
+
+    <button onclick="checkConfirm();">confirm</button>
+
+    <script>
+        function checkConfirm() {
+            // var result = window.confirm('여러분 배고픈가요??');
+            var result = confirm('여러분 배고픈가요??');
+
+            // console.log(result ? '저도 배고파요ㅜㅜ' : '저만 배고픈가요?ㅠㅠ');
+            if(result) {
+                alert('저도 배고파요ㅜㅜ');
+            } else {
+                alert('저만 배고픈가요?ㅠㅠ');
+            }
+        }
+    </script>
+
+    <h4>window.prompt()</h4>
+
+    <button onclick="checkPrompt();">prompt</button>
+
+    <script>
+        function checkPrompt() {
+            var name = prompt('당신의 이름은 무엇인가요?');
+
+            console.log(name);
+
+            if(name != '') {
+                // alert(name + '님 환영합니다.');
+                alert(`${name}님 환영합니다.`);
+            }
+        }
+
+    </script>
+
+    <h3>2) 데이터 출력</h3>
+    <h4>document.write()</h4>
+    <script>
+        document.write('<mark>document.write()로 출력한 결과!</mark>');
+    </script>
+
+    <h4>window.alert()</h4>
+    <script>
+        // window.alert('알림 창을 출력합니다.');
+        // alert('알림 창을 출력');
+    </script>
+
+    <h4>window.console.log()</h4>
+    <script>
+        // window.console.log('콘솔 화면에 값을 출력합니다.');
+        console.log('콘솔 화면에 값을 출력합니다!!!!');
+    </script>
+
+    <h4>innerHTML로 요소 내용 변경</h4>
+
+    <div id="div1">자바스크립트에서 태그의 값을 읽거나 값을 변경할 때 <b>innerHTML</b> 속성을 사용한다.</div>
+
+    <button onclick="checkInnerHTML();">innerHTML</button>
+
+    <script>
+        function checkInnerHTML() {
+            var div1 = document.getElementById('div1');
+
+            console.log(div1);
+            console.log(div1.innerHTML);
+            console.log(div1.innerText);
+
+            // div1.innerHTML = 'innerHTML 속성으로 값 변경!!'
+            // div1.innerHTML = div1.innerHTML + 'innerHTML 속성으로 값 변경!!';
+            // div1.innerHTML += '<br>innerHTML 속성으로 값 변경!!';
+            div1.innerText += '<br>innerHTML 속성으로 값 변경!!';
+        }
+    </script>
+
+    <h2>3. HTML 태그(요소)에 접근하기</h2>
+    <h3>1) 아이디로 접근</h3>
+
+    <div id="div2" class="area"></div>
+
+    <button onclick="accessId();">아이디로 접근</button>
+
+    <script>
+        function accessId() {
+            var div2 = document.getElementById('div2');
+
+            console.log(div2);
+
+            div2.style.backgroundColor = 'red';
+            div2.style.color = 'white';
+            div2.innerHTML = '색상 변경 완료!';
+        }
+    </script>
+
+    <h3>2) 태그 명으로 접근</h3>
+    <ul>
+        <li>목록 1</li>
+        <li>목록 2</li>
+        <li>목록 3</li>
+        <li>목록 4</li>
+        <li>목록 5</li>
+    </ul>
+
+    <button onclick="accessTagName();">태그 명으로 접근</button>
+
+    <script>
+        function accessTagName() {
+            var red = 0;
+            var green = 0;
+            var blue = 0;
+            var listItems = document.getElementsByTagName('li');
+
+            console.log(listItems);
+
+            for(var i = 0; i < listItems.length; i++) {
+                red = parseInt(Math.random() * 255) + 1;
+                green = parseInt(Math.random() * 255) + 1;
+                blue = parseInt(Math.random() * 255) + 1;
+
+                listItems[i].style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+            }
+        }
+    </script>
+
+    <h3>3) name으로 접근</h3>
+    <form>
+        <!-- (label>input:checkbox[name=hobby])*3 -->
+        <label><input type="checkbox" name="hobby" value="game">게임</label>
+        <label><input type="checkbox" name="hobby" value="music">음악 감상</label>
+        <label><input type="checkbox" name="hobby" value="movie">영화 보기</label>
+    </form>
+
+    <div id="div3" class="area"></div>
+    <button onclick="accessName();">name으로 접근</button>
+
+    <script>
+        function accessName() {
+            var checkItem = '';
+            var div3 = document.getElementById('div3');
+            var hobbies = document.getElementsByName('hobby');
+
+            for(var i = 0; i < hobbies.length; i++) {
+                if(hobbies[i].checked) {
+                    checkItem += hobbies[i].value + '<br>';
+                }
+            }
+
+            div3.innerHTML = checkItem;
+        }
+    </script>
+
+    <h3>4) text 필드의 작성된 값을 읽어오는 방법</h3>
+    <form>
+        <label for="userName">이름 : </label>
+        <input type="text" name="userName" id="userName">
+        <button type="button" onclick="readValue();">이름 확인</button>
+    </form>
+
+    <div id="div4" class="area"></div>
+
+    <script>
+        function readValue() {
+            var input = document.getElementById('userName');
+            var name = input.value;
+            // var name = document.getElementById('userName').value;
+            
+            if(name == '' || name.length == 0) {
+                alert('이름을 입력하세요.');
+            } else {
+                document.getElementById('div4').innerHTML = `<b>${name}</b>`;
+            }
+
+            input.value = '';
+            input.focus();
+        }
+    </script>
+
+    <script src="./02_개요.js"></script>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</body>
+</html>

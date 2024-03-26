@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 2</title>
+    <!--  
+        외부 스타일 시트
+        스타일만 따로 관리하는 .css 확장자를 가지는 외부 문서를 만들고 <link> 태그를 통해서 연결시켜주는 방법이다.
+    -->
+    <link href="./02_CSS선택자2.css" rel="stylesheet" >
+</head>
+<body>
+    <h1>CSS 선택자 2</h1>
+    
+    <h2>5. 속성 선택자</h2>
+    <p>
+        선택자 뒤에 []를 사용해서 요소를 선택할 때 사용한다.
+    </p>
+    <pre>
+        선택자[속성] {
+            스타일 속성: 값;
+            스타일 속성: 값;
+            ...
+        }
+    </pre>
+
+    <div class="div-class" name="name1">div1</div>
+    <div class="div-class" name="name2">div2</div>
+    <div class="div-class" name="name3 name1">div3</div>
+    <div class="class-div" name="name3">div4</div>
+
+    <h2>6. 자손 선택자와 후손 선택자</h2>
+    <p>
+        자손 : 바로 하위 요소들 / 후손 : 하위 요소들 전부
+    </p>
+    <pre>
+        1) 자손 선택자
+            a>b {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+        
+        2) 후손 선택자
+            a b {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <div id="test1">
+        <h4>자손 입니다.</h4>
+        <h4>나도 자손 입니다.</h4>
+        <ul>
+            <h4>나도 자손입니다.</h4>
+            <li>나는 ul의 자손이면서 div의 후손입니다.</li>
+            <li>나는 ul의 자손이면서 div의 후손입니다.</li>
+        </ul>
+        <li>나는 div의 자손 입니다.</li>
+    </div>
+
+    <h2>7. 형제 선택자</h2>
+    <p>
+        형제 관계에서 뒤에 위치한 요소를 선택할 때 사용한다.
+    </p>
+    <pre>
+        1) 인접 형제 선택자
+            a+b {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+
+        2) 형제 선택자
+            a~b {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <div id="test2">div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+
+    <h2>8. 반응 선택자</h2>
+    <p>
+        사용자의 동작에 따라 요소를 선택할 때 사용한다.
+    </p>
+    <pre>
+        1) :active
+            선택자:active {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+
+        2) :hover
+            선택자:hover {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+        
+        3) :focus
+            선택자:focus {
+                스타일 속성: 값;
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <div id="active-test">active 테스트</div>
+
+    <br>
+
+    <div id="hover-test">hover 테스트</div>
+
+    <br>
+    <form >
+        <label for="userId">아이디 : </label>
+        <input type="test" name="userId" id="userId" placeholder="아이디를 입력하세요.">
+
+        <br><br>
+
+        <label for="userPwd">패스워드 : </label>
+        <input type="password" name="userPwd" id="userPwd" placeholder="패스워드를 입력하세요.">
+    </form>
+    
+    <h2>9. 상태 선택자</h2>
+    <p>
+        요소의 상태에 따라 요소를 선택할 때 사용한다.
+    </p>
+    <pre>
+            1) :checked
+                선택자:checked {
+                    스타일 속성: 값;
+                    스타일 속성: 값;
+                    ...
+                }
+            
+            2) :enabled
+                선택자:enabled {
+                    스타일 속성: 값;
+                    스타일 속성: 값;
+                    ...
+                }
+
+            3) :disabled
+                선택자:disabled {
+                    스타일 속성: 값;
+                    스타일 속성: 값;
+                    ...
+                }
+    </pre>
+
+    <form>
+        <input type="checkbox" name="fruits" id="apple" value="apple">
+        <label for="apple">사과</label>
+
+        <input type="checkbox" name="fruits" id="banana" value="banana">
+        <label for="banana">바나나</label>
+        
+        <input type="checkbox" name="fruits" id="peach" value="peach">
+        <label for="peach">복숭아</label>
+    </form>
+
+    <br><br>
+
+    <h3>당신의 연령대는?</h3>
+    <select>
+        <option disabled>10대</option>
+        <option disabled>20대</option>
+        <option>30대</option>
+        <option>40대</option>
+        <option>50대</option>
+        <option>60대</option>
+    </select>
+
+    <button>버튼 1</button>
+    <button disabled>버튼 2</button>
+
+    <h2>10. 구조 선택자</h2>
+    <p>
+        특정 위치에 있는 태그를 선택할 때 사용한다. (위치로 구분)
+    </p>
+    <div id="test3">
+        <!-- <div></div> -->
+        <p>테스트 1</p>
+        <p>테스트 2</p>
+        <p>테스트 3</p>
+        <p>테스트 4</p>
+        <p>테스트 5</p>
+        <pre>테스트 6</pre>
+    </div>
+
+    <p>
+        특정 위치에 있는 태그를 선택할 때 사용한다. (태그 별로 구분)
+    </p>
+
+    <div id="test4">
+        <!-- <div>테스트 0 </div> -->
+        <p>테스트 1</p>
+        <p>테스트 2</p>
+        <p>테스트 3</p>
+        <p>테스트 4</p>
+        <p>테스트 5</p>
+        <pre>테스트 6</pre>
+    </div>
+
+    <h2>11. 문자 선택자</h2>
+    <p>
+        태그 내부에서 특정 조건의 문자를 선택할 때 사용한다.
+    </p>
+    <div id="test5">
+        <p>
+            카카오가 ‘서비스 먹통 사태’ 피해자들에 대한 보상안으로 내놓은 ‘톡서랍 플러스’ 1개월 이용권을 두고 “낚시성 마케팅”이란 비판이 들끓고 있다. 1개월 이용 기간이 끝나면 유료결제로 자동 전환되는 시스템 때문에 보상을 가장한 판촉행사라는 지적이 나온다. 또 국외 이용자들은 이모티콘 보상 대상에서 제외해 차별 논란도 제기되고 있다.
+
+            카카오는 5일 오전 9시부터 선착순 300만명에게 톡서랍 플러스 1개월 이용권을 지급하는 등 무료 서비스 이용자에 대한 보상을 시작했다. 이번 보상안에는 이모티콘 3종(영구 이용 1종, 90일 이용 2종), 카카오메이커스 5천원 쿠폰 등도 포함됐다.
+
+            반발은 톡서랍 플러스 보상을 받은 이용자들 쪽에서 거세졌다. 1개월 뒤에는 자동으로 유료화돼 결제가 이뤄지는 방식 때문에 ‘낚시성 프로모션’이라는 비판이 나오고 있다. 톡서랍 플러스는 카카오톡 대화 기록, 사진, 동영상, 연락처 등을 보관하는 클라우드 서비스로, 100GB 용량 기준 한 달 이용료는 1900원이다. 무료 사용 기간이 지난 뒤 서비스를 해지하지 않으면 자동으로 1900원이 결제되는 것이다. 이용자들은 “보상을 가장해 서비스 가입을 유도했다”고 지적한다.
+
+            국외 카카오톡 이용자들이 이번 보상에서 제외된 것을 두고 차별 논란도 일고 있다. 카카오톡 서비스 가입 당시 국외 전화번호로 등록한 경우, 이모티콘 보상을 받을 수 없어서다. 국외 이용자들은 이모티콘 3종과 메이커스 할인 쿠폰 등 모든 보상에서 제외됐다. 캐나다에서 직장 생활을 하는 오아무개(36)씨는 “국외 이용자도 똑같이 카카오 먹통 피해를 겪었다. 지역을 구분해 보상하는 건 국외 이용자에 대한 차별이다”라고 말했다.
+
+            카카오는 톡서랍 플러스 자동결제 비판과 관련해 “정기구독 서비스 특성상 자동결제 시스템이 연동돼 있어 발생한 문제”라며 “이용자 의사와 달리 자동결제되는 걸 막기 위해 서비스 종료 1주일 전에 해지 안내 공지를 보내는 등 조치를 할 것”이라고 설명했다. 국외 이용자가 보상에서 제외된 문제에 대해서는 “카카오 서비스 기반이 국내이다 보니 보상 기준·대상을 정하는 과정에서 불가피하게 국외 이용자가 제외됐다. 국외 이용자에겐 ‘죄송하다’는 양해를 구한다”고 밝혔다.
+
+            한편, 무료서비스 장애에 대한 이모티콘 보상안을 두고 “무늬만 보상”이라는 비판도 이어졌다. 온라인 커뮤니티의 카카오 보상안 관련 게시글엔 “선택권도 없이 정해진 이모티콘을 주는 게 무슨 보상이냐“, “보상이 아니라 자사 캐릭터 홍보다” 등의 비판 글이 달렸다. 반면 플랫폼 업계에선 “무료서비스 장애에 대한 법적 보상근거가 없어 현금 보상 등이 이뤄지면 주주 반발이 클 수밖에 없다. 자체 서비스를 활용해 보상하는 게 최선의 선택”이라는 반응이 나온다.
+        </p>
+    </div>
+
+    <h2>12. 부정 선택자</h2>
+    <p>
+        특정 선택자를 제외한 요소를 선택할 때 사용한다.
+    </p>
+
+    <!-- div#test6>p.p*5{테스트$} -->
+    <div id="test6">
+        <p class="p">테스트1</p>
+        <p>테스트2</p>
+        <p>테스트3</p>
+        <p>테스트4</p>
+        <p>테스트5</p>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+</body>
+</html>

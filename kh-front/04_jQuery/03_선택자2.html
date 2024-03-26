@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 선택자 2</title>
+</head>
+<body>
+    <h1>제이쿼리 선택자 2</h1>
+
+    <h2>4. 자손, 후손 선택자</h2>
+
+    <div style="border: 1px solid;">
+        조상
+        <ul>
+            자식 1
+            <li>div의 후손이면서 ul의 자식 1</li>
+            <li>div의 후손이면서 ul의 자식 2</li>
+            <li class="ch">div의 후손이면서 ul의 자식 3</li>
+            <li class="ch">div의 후손이면서 ul의 자식 4</li>
+            <li><h3>div/ul의 후손이면서 li의 자식</h3></li>
+        </ul>
+        <h3>자식 2</h3>
+        <h3>자식 3</h3>
+    </div>
+
+    <h2>5. 속성 선택자</h2>
+    <div id="div1">
+        <form>
+            <input type="text">
+            <input type="number" class="test1 test2">
+            <input type="radio">
+            <input type="checkbox">
+            <input type="button" class="test3" value="버튼">
+        </form>
+    </div>
+
+    <h2>6. 입력 양식 선택자</h2>
+    <div id="div2">
+        <form>
+            <input type="text">
+            <input type="button">
+            <input type="checkbox">
+            <input type="file">
+            <br><br>
+            <input type="image" src="../resources/image/flower1.PNG">
+        </form>
+    </div>
+
+    <h2>7. 입력 양식 상태 선택자</h2>
+
+    <div id="div3">
+        <form>
+            <input type="text">
+            <input type="text" disabled>
+
+            <br><br>
+
+            <input type="button" value="활성화">
+            <input type="button" value="비활성화" disabled>
+
+            <br><br>
+
+            <label><input type="checkbox" checked>게임</label>
+            <label><input type="checkbox">음악</label>
+            <label><input type="checkbox">영화</label>
+
+            <br><br>
+
+            <label for="national">국가 : </label>
+            <select id="national">
+                <option value="한국">한국</option>
+                <option value="미국">미국</option>
+                <option value="일본">일본</option>
+                <option value="중국">중국</option>
+            </select>
+
+            <label for="hobby">취미 : </label>
+            <select id="hobby">
+                <option value="축구">축구</option>
+                <option value="야구">야구</option>
+                <option value="농구">농구</option>
+            </select>
+
+            <br><br>
+
+            <input type="text" id="result1" readonly>
+            <input type="text" id="result2" readonly>
+        </form>
+    </div>
+
+    <h2>8. attr()와 prop()</h2>
+    <div id="div4">
+        <form>
+            <label>선택 : <input type="checkbox" id="ch1" checked></label>
+            <label>비선택 : <input type="checkbox" id="ch2"></label>
+        </form>
+    </div>
+
+
+    <script src="./js/jquery-3.6.3.js"></script>
+    <script src="./03_선택자2.js"></script>
+
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br>
+</body>
+</html>
