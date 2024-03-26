@@ -1,0 +1,8 @@
+[INFO ] 2023-03-09 15:19:56.024 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 
+[DEBUG] 2023-03-09 15:19:56.026 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 124 - 
+[INFO ] 2023-03-09 15:19:56.126 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 
+[DEBUG] 2023-03-09 15:19:56.127 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 124 - 
+[INFO ] 2023-03-09 15:19:57.163 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 
+[DEBUG] 2023-03-09 15:19:57.163 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 125 - 
+[INFO ] 2023-03-09 15:19:57.280 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 
+[DEBUG] 2023-03-09 15:19:57.280 [main] mybatis.board.model.service.BoardService getBoardCount - getBoardCount() 메소드 호출 - 125 - 
